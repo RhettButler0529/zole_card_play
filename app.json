@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "React Native Starter Kit",
+    "description": "This is a boilerplate that launches with a React web app and React Native mobile app. It shares a single code base! The 'business logic' (i.e. actions, containers, reducers) is shared across both platforms, whilst allowing flexibility in View components to ensure your project looks and feels native in each platform. - https://github.com/mcnamee/react-native-starter-kit",
+    "slug": "react-native-starter-kit",
+    "privacy": "public",
+    "sdkVersion": "34.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "landscape",
+    "icon": "./src/images/app-icon.png",
+    "splash": {
+      "image": "./src/images/launch.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#473be7"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyB7QvvuDPo1AybxHX0zZoj3GcUgJfx1rs8'",
+        "authDomain": "zole-app.firebaseapp.com",
+        "databaseURL": "https://zole-app.firebaseio.com",
+        "projectId": "zole-app",
+        "storageBucket": "zole-app.appspot.com",
+        "messagingSenderId": "241745987415"
+      },
+      "facebook": {
+        "appId": "570004516363887"
+      }
+    }
+  }
+}

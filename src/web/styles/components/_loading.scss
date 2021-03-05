@@ -1,0 +1,34 @@
+/**
+ * Styles for the Loading.js component
+ */
+
+.page-is-loading {
+ margin-top: 25%;
+ transform: translateY(-50%);
+}
+
+.loading-background {
+  /*background-image: url('../../../images/Menu/zole_bg.png');
+  background-size: 284px, 57px;
+  background-size: 980px, 700px;
+  background-position: center center;
+  position: absolute;
+  width: 980px;
+  height: 700px;
+  z-index: -200;*/
+  background-color: transparent;
+}
+
+.loading-logo {
+//  @include background-2x( '../../images/Menu/zole_logo', 'png', 284px, 57px, center center, no-repeat );
+  background-image: url('../../../images/Menu/zole_logo.png');
+  background-size: 284px, 57px;
+  background-position: center center;
+
+  position: relative;
+  top: 17%;
+  left: 340px;
+  width: 284px;
+  height: 57px;
+  z-index: -200;
+}

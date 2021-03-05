@@ -1,0 +1,23 @@
+<html>
+<head>
+<script type="text/javascript">
+        var lastHash = '';
+        console.log('lastHash');
+        function watchHash() {
+                var arr = window.location.hash.split('#');
+                console.log(arr);
+                var hash = arr[1];
+                if (typeof hash != "undefined") {
+                         if (hash !== lastHash) {
+                                window.parent.parent.draugiemProcessCallback(decodeURIComponent(hash));
+                                console.log(hash);
+                                lastHash = hash;
+                        }
+                }
+                setTimeout(watchHash, 10000);
+        };
+        watchHash();
+</script>
+</head>
+<body></body>
+</html>

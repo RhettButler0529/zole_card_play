@@ -1,0 +1,464 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "tests": {
+      ".read": true,
+    	".write": false,
+    },
+
+    "failedLoginLog": {
+      ".read": false,
+    	".write": true,
+    },
+
+    "smartLookEnabled": {
+      ".read": true,
+    	".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+    },
+
+    "cardPlayedLog4": {
+      ".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+    	".write": false,
+    },
+
+    "cardPlayedLog5": {
+      ".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+    	".write": false,
+    },
+
+    "chat": {
+      "$roomId": {
+      ".read": "auth != null && root.child('rooms/'+ $roomId +'/playersList/playerList/' + auth.uid).exists()",
+      ".write": "auth != null && root.child('rooms/'+ $roomId +'/playersList/playerList/' + auth.uid).exists()"
+      }
+    },
+
+    "triggerLogs": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+
+    "cardsPlayedLog2": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+
+    "supportChat": {
+      "messages": {
+        "$uid": {
+        ".read": "auth != null && auth.uid === $uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        ".write": "auth != null && auth.uid === $uid || root.child('users/'+auth.uid+'/role').val() === 'admin'"
+        }
+      },
+      "activeChats": {
+        ".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        ".indexOn": "responded",
+
+        "$uid": {
+        ".read": "auth != null && auth.uid === $uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        ".write": "auth != null && auth.uid === $uid || root.child('users/'+auth.uid+'/role').val() === 'admin'"
+        }
+      }
+    },
+
+    "testUsers": {
+      ".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+    },
+
+    "users": {
+      ".read": "auth != null && (root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester')",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      ".indexOn": ["userIndex", "lowerCaseName", "uid", "vip"],
+
+      "$uid": {
+      	".write": "root.child('users/'+auth.uid+'/role').val() === 'admin' || ($uid === auth.uid && root.child('users/'+auth.uid+'/role').val() === 'tester')",
+        ".read": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester'",
+
+        "public": {
+          ".read": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      		".write": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        },
+        "firstTimeModal": {
+          ".read": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      		".write": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        },
+        "lvlUpNotification": {
+          ".read": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      		".write": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        },
+        "tutorialShown": {
+          ".read": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      		".write": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        },
+        "newVersion": {
+          ".read": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      		".write": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        },
+        "lastLogin": {
+          ".read": "auth != null",
+      		".write": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        },
+        "enableLogRocket": {
+          ".read": "$uid === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      		".write": "root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        },
+        "role": {
+          ".validate": "(root.child('users/'+auth.uid+'/role').val() === 'admin' && newData.exists()) || (root.child('users/'+auth.uid+'/role').val() === 'owner' && newData.val() === root.child('users/'+auth.uid+'/clinicId').val())"
+        },
+      }
+    },
+
+    "statistics": {
+      ".read": "false",
+      ".write": "false",
+      "userCount": {
+        ".read": "auth != null && (root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester')",
+      	".write": "false"
+      },
+      "roomsPlayed": {
+        ".read": "auth != null && (root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester')",
+      	".write": "false"
+      },
+      "bansCount": {
+        ".read": "auth != null",
+      	".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'"
+      },
+    },
+
+    "users_count": {
+      ".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    },
+
+    "status": {
+      ".read": true,
+      ".write": false,
+      ".indexOn": ["lastLogin", "status", "lastAction", "name", "lowerCaseName", "bal", "lvl"],
+      "$uid": {
+        ".read": true,
+       	".write": "$uid === auth.uid",
+      },
+      "onlineCount": {
+        ".read": true,
+        ".write": false,
+      }
+    },
+
+    "onlineCount": {
+      ".read": true,
+      ".write": false,
+    },
+
+    "roomsCount": {
+      ".read": true,
+      ".write": false,
+    },
+
+    "adminLogs": {
+      ".read": "auth != null && (root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester')",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      "roomIds": {
+        ".indexOn": "index"
+      }
+    },
+
+    "vip_users": {
+			".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+    },
+
+    "bans": {
+			".read": "auth != null",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      ".indexOn": ["endDate", "index", "blocked"],
+    },
+
+    "transactions": {
+			".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      ".indexOn": ["index"],
+    },
+
+    "tournaments": {
+      ".indexOn": ["status", "completed"],
+			".read": "auth != null",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+    },
+
+    "tourPlayers": {
+			".read": "auth != null",
+      ".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+
+      "$tournamentId": {
+				".read": "auth != null",
+      	".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+    	},
+    },
+
+    "tourPlayerData":{
+      "$userID": {
+				".read": "auth != null && $userID === auth.uid",
+      	".write": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
+        ".indexOn": "ended"
+    	},
+    },
+
+    "tourPlWaitList": {
+      ".read": false,
+    	".write": false,
+      "$tournamentId": {
+				"$userID": {
+          ".read": "$userID === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+          ".write": "$userID === auth.uid && !newData.exists()"
+        }
+    	},
+    },
+
+    "tournamentRooms": {
+      ".read": "auth != null",
+    	".write": false,
+    },
+
+    "translations": {
+      ".read": true,
+    	".write": false,
+    },
+
+    "leaderboard": {
+      ".read": true,
+    	".write": false,
+
+      "allTime": {
+        ".read": true,
+      	".write": false,
+        ".indexOn": [ "/totalPnts", "/pos" ],
+      },
+      "year": {
+        ".read": true,
+      	".write": false,
+        ".indexOn": [ "/totalPnts", "/pos" ],
+      },
+      "month": {
+        ".read": true,
+      	".write": false,
+        ".indexOn": [ "/totalPnts", "/pos" ],
+      },
+      "week": {
+        ".read": true,
+      	".write": false,
+        ".indexOn": [ "/totalPnts", "/pos" ],
+      },
+      "daily": {
+        ".read": true,
+      	".write": false,
+        ".indexOn": [ "/totalPnts", "/pos" ],
+      }
+    },
+
+    "leaderboardPoints": {
+      ".read": true,
+    	".write": false,
+      ".indexOn": [ "/tP" ]
+    },
+
+    "yearLeaderboardPoints": {
+      ".read": true,
+    	".write": false,
+      ".indexOn": [ "/tP" ]
+    },
+
+    "monthLeaderboardPoints": {
+      ".read": true,
+    	".write": false,
+      ".indexOn": [ "/tP" ]
+    },
+
+    "weekLeaderboardPoints": {
+      ".read": true,
+    	".write": false,
+      ".indexOn": [ "/tP" ]
+    },
+
+    "dailyLeaderboardPoints": {
+      ".read": true,
+    	".write": false,
+      ".indexOn": [ "/tP" ]
+    },
+
+    "roomsPubInf": {
+      ".read": true,
+    	".write": false,
+      ".indexOn": [ "roomClosed", "filled" ]
+    },
+    "roomsPubInfIds": {
+      ".read": true,
+    	".write": false,
+      ".indexOn": "open"
+    },
+    "initiatedPayments": {
+      ".indexOn": "index",
+      ".read": "root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    },
+    "initiatedPaymentsCount": {
+      ".read": "root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    },
+    "userBalHistory": {
+      "$userID": {
+     	 ".indexOn": "time",
+     	 ".read": "$userID === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+       ".write": "root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    	}
+    },
+    "gameSettings": {
+      ".read": true,
+      ".write": "root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    },
+    "gifts": {
+      ".read": true,
+      ".write": "root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    },
+    "gifts2": {
+      ".read": true,
+      ".write": "root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    },
+    "emotions": {
+      ".read": true,
+      ".write": "root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    },
+    "fbUsers": {
+      "$fbID": {
+     	 ".read": true,
+       ".write": false,
+    	}
+    },
+    "ignoredPlayers": {
+      "$userID": {
+     	 ".read": "$userID === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+       ".write": "$userID === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'"
+    	}
+    },
+
+    "userAchievements": {
+      "$userID": {
+     	 ".read": "$userID === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+       ".write": false,
+
+      "supportMessagesSent": {
+      	".read": "$userID === auth.uid || root.child('users/'+auth.uid+'/role').val() === 'admin'",
+      	".write": "$userID === auth.uid",
+      }
+    	}
+    },
+
+    "activeRooms": {
+      ".read": false,
+    	".write": false,
+      ".indexOn": "time",
+    },
+
+
+    "rooms": {
+      ".read": false,
+    	".write": false,
+
+      "roomCount": {
+        ".read": true,
+    		".write": false,
+      },
+
+      ".indexOn": [ "tournamentId", "nextTimestamp" ],
+
+        "$roomId": {
+          ".read": false,
+    			".write": false,
+          "gifts": {
+            ".read": true,
+    				".write": false
+          },
+          "globalParams": {
+            ".read": true,
+    				".write": false,
+            "disableTimer": {
+              ".read": true,
+              ".write": "root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester'"
+            }
+          },
+          "points": {
+            ".read": true,
+    				".write": false,
+          },
+          "nextTimestamp": {
+            ".read": true,
+    				".write": false,
+          },
+          "previousRound": {
+            ".read": true,
+    				".write": false,
+          },
+
+          "gameStartTime": {
+            ".read": true,
+    				".write": false,
+          },
+
+					"players": {
+            ".read": false,
+    				".write": false,
+            "$playerPos": {
+              ".read": "root.child('rooms/'+$roomId+'/players/'+ $playerPos +'/uid').val() === auth.uid",
+    					".write": "root.child('rooms/'+$roomId+'/players/'+ $playerPos +'/uid').val() === auth.uid && (root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester')",
+            }
+
+          },
+          "playersList": {
+            ".read": true,
+    				".write": false,
+            "$playerPos": {
+              ".read": true,
+    					".write": "root.child('rooms/'+$roomId+'/players/'+ $playerPos +'/uid').val() === auth.uid && (root.child('users/'+auth.uid+'/role').val() === 'admin' || root.child('users/'+auth.uid+'/role').val() === 'tester')",
+            	"emotion": {
+                ".read": true,
+                ".write": "root.child('rooms/'+$roomId+'/players/'+ $playerPos +'/uid').val() === auth.uid && !newData.exists()"
+              }
+
+            }
+          },
+            "curRnd": {
+            ".read": false,
+    				".write": false,
+              "currentTurn": {
+                ".read": true,
+    						".write": false,
+              },
+              "currentTable": {
+                ".read": true,
+    						".write": false,
+              },
+              "largePlayer": {
+                ".read": true,
+    						".write": false,
+              },
+              "type": {
+                ".read": true,
+    						".write": false,
+              },
+              "cardPlayed": {
+                ".read": true,
+								".write": "!data.exists() && newData.exists() && root.child('rooms/'+$roomId+'/globalParams/gameState').val() === 'play' && root.child('rooms/'+$roomId+'/curRnd/currentTurn').val() === root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()&& (root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/0').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/1').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/2').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/3').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/4').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/5').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/6').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/7').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/8').val() === newData.val())",
+              },
+              "cardPlayed2": {
+                ".read": true,
+								".write": "(data.val() === 0 || !data.exists()) && (!newData.exists() || (newData.val() !== 0 && root.child('rooms/'+$roomId+'/globalParams/gameState').val() === 'play' && root.child('rooms/'+$roomId+'/curRnd/currentTurn').val() === root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val() && (root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/0').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/1').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/2').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/3').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/4').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/5').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/6').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/7').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/8').val() === newData.val())))",
+              },
+              "cardBurried": {
+                ".read": true,
+								".write": "(data.val() === 0 || !data.exists()) && (!newData.exists() || (newData.val() !== 0 && root.child('rooms/'+$roomId+'/globalParams/gameState').val() === 'burry' && root.child('rooms/'+$roomId+'/curRnd/currentTurn').val() === root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val() && (root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/0').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/1').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/2').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/3').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/4').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/5').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/6').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/7').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/8').val() === newData.val() || root.child('rooms/'+$roomId+'/players/'+root.child('rooms/'+$roomId+'/playersList/playerList/'+auth.uid).val()+'/cards/9').val() === newData.val())))",
+              },
+          },
+        }
+    },
+  }
+}

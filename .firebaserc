@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "default": "zole-app"
+  },
+  "targets": {
+    "zole-app": {
+      "hosting": {
+        "zole-test": [
+          "zole-test"
+        ],
+        "zole-app": [
+          "zole-app"
+        ],
+        "zole-dra": [
+          "zole-dra"
+        ],
+        "zole-fb": [
+          "zole-fb"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,289 @@
+.previous-round {
+  position: absolute;
+  top: 300px;
+  right: 20px;
+
+  &-image {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  &-points {
+    text-align: center;
+    font-size: 16px;
+
+    p {
+      margin-bottom: 2px;
+    }
+  }
+
+  &-header {
+    text-align: center;
+    text-transform: uppercase;
+  //  border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 38px;
+
+    &-image {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    &-text {
+      display: inline-block;
+    }
+  }
+
+  &-modal {
+    height: 450px;
+    top: 15px !important;
+
+    & .modal-content {
+      border-radius: 25px;
+    }
+
+    &-header {
+      padding-left: 0px;
+      padding-right: 0px;
+      border-bottom: 1px solid #fff!important;
+
+      &-close {
+        width: 21px;
+        height: 21px;
+        color: #fed65f;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-right: 10px;
+      }
+    }
+
+    &-body {
+      height: 520px;
+      padding: 0px;
+    }
+
+    &-footer {
+      &-button {
+        width: 20%;
+        margin: auto;
+        background-color: #2c5955;
+        border-radius: 15px;
+        height: 30px;
+        font-size: 18px;
+        padding: 0;
+        text-align: center;
+        text-transform: uppercase;
+        border: 1px solid #fff;
+        -webkit-box-shadow: 5px 5px 0px 0px #380000;
+        -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 5px 0px 0px #380000;
+
+        &:hover {
+          color: #fed65f;
+          border-color: #fed65f;
+          background-color: #2c5955;
+          text-decoration: none;
+        }
+
+        &:focus {
+          color: #fed65f;
+          border-color: #fed65f;
+          background-color: #2c5955;
+          text-decoration: none;
+        }
+
+        &:active {
+          color: #fff;
+          background-color: #380000;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  &-player-name {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &-player1 {
+    border-bottom: 1px solid #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  &-player2 {
+    border-bottom: 1px solid #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  &-player3 {
+    border-bottom: 1px solid #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  &-tableCards {
+    border-bottom: 1px solid #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  &-cards {
+    position: relative;
+    width: 35%;
+    height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  &-table-cards {
+    position: relative;
+    width: 10%;
+    height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  &-card {
+    width: 50px;
+    height: 75px;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    z-index: 9;
+
+    &-0 {
+      left: 0px;
+    }
+    &-1 {
+      left: 30px;
+    }
+    &-2 {
+      left: 60px;
+    }
+    &-3 {
+      left: 90px;
+    }
+    &-4 {
+      left: 120px;
+    }
+    &-5 {
+      left: 150px;
+    }
+    &-6 {
+      left: 180px;
+    }
+    &-7 {
+      left: 210px;
+    }
+
+    background-size: 50px 75px;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    &-♠︎-9 {
+    /*  @include card-2x(
+        '../../images/cards-white-fill/♣︎-K',
+        'png',
+        50px,
+        75px,
+        top center,
+        no-repeat
+      ); */
+      background-image: url('../../../images/cards-white-fill/♠︎-9.png');
+    }
+    &-♠︎-10 {
+      background-image: url('../../../images/cards-white-fill/♠︎-10.png');
+    }
+    &-♠︎-A {
+      background-image: url('../../../images/cards-white-fill/♠︎-A.png');
+    }
+    &-♠︎-J {
+      background-image: url('../../../images/cards-white-fill/♠︎-J.png');
+    }
+    &-♠︎-Q {
+      background-image: url('../../../images/cards-white-fill/♠︎-Q.png');
+    }
+    &-♠︎-K {
+      background-image: url('../../../images/cards-white-fill/♠︎-K.png');
+    }
+
+    &-♣︎-9 {
+      background-image: url('../../../images/cards-white-fill/♣︎-9.png');
+    }
+    &-♣︎-10 {
+      background-image: url('../../../images/cards-white-fill/♣︎-10.png');
+    }
+    &-♣︎-A {
+      background-image: url('../../../images/cards-white-fill/♣︎-A.png');
+    }
+    &-♣︎-J {
+      background-image: url('../../../images/cards-white-fill/♣︎-J.png');
+    }
+    &-♣︎-Q {
+      background-image: url('../../../images/cards-white-fill/♣︎-Q.png');
+    }
+    &-♣︎-K {
+      background-image: url('../../../images/cards-white-fill/♣︎-K.png');
+    }
+
+    &-♥-9 {
+      background-image: url('../../../images/cards-white-fill/♥-9.png');
+    }
+    &-♥-10 {
+      background-image: url('../../../images/cards-white-fill/♥-10.png');
+    }
+    &-♥-A {
+      background-image: url('../../../images/cards-white-fill/♥-A.png');
+    }
+    &-♥-J {
+      background-image: url('../../../images/cards-white-fill/♥-J.png');
+    }
+    &-♥-Q {
+      background-image: url('../../../images/cards-white-fill/♥-Q.png');
+    }
+    &-♥-K {
+      background-image: url('../../../images/cards-white-fill/♥-K.png');
+    }
+
+    &-♦︎-7 {
+      background-image: url('../../../images/cards-white-fill/♦︎-7.png');
+    }
+    &-♦︎-8 {
+      background-image: url('../../../images/cards-white-fill/♦︎-8.png');
+    }
+    &-♦︎-9 {
+      background-image: url('../../../images/cards-white-fill/♦︎-9.png');
+    }
+    &-♦︎-10 {
+      background-image: url('../../../images/cards-white-fill/♦︎-10.png');
+    }
+    &-♦︎-A {
+      background-image: url('../../../images/cards-white-fill/♦︎-A.png');
+    }
+    &-♦︎-J {
+      background-image: url('../../../images/cards-white-fill/♦︎-J.png');
+    }
+    &-♦︎-Q {
+      background-image: url('../../../images/cards-white-fill/♦︎-Q.png');
+    }
+    &-♦︎-K {
+      background-image: url('../../../images/cards-white-fill/♦︎-K.png');
+    }
+  }
+}

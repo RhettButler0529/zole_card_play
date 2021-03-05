@@ -1,0 +1,96 @@
+// Override Bootstrap's variables before importing
+
+// Colors
+$purple: #473BE7;
+$primary: $purple;
+$body-bg: #000000;
+$body-color: #8D8E90;
+
+// Jumbotron
+$jumbotron-bg: white;
+
+// Misc
+$border-radius: 0;
+
+// Type
+$font-family-sans-serif: 'Inter UI', sans-serif;
+$headings-margin-bottom: 0.5em;
+
+// Then import Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+/****************************
+ HIGH PPI DISPLAY BACKGROUNDS
+*****************************/
+
+@mixin background($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat) {
+
+  $at1x_path: "#{$path}.#{$ext}";
+
+  background-image: url("#{$at1x_path}");
+
+  background-size: $w $h;
+  background-position: $pos;
+  background-repeat: $repeat;
+}
+
+
+@mixin background-2x($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat) {
+
+  $at1x_path: "#{$path}.#{$ext}";
+  $at2x_path: "#{$path}@2x.#{$ext}";
+
+//  background-image: url("#{$at1x_path}");
+  background-size: $w $h;
+  background-position: $pos;
+  background-repeat: $repeat;
+//  clip-path: inset(2px 2px 4px 2px round 4%);
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5),
+  all and (-o-min-device-pixel-ratio: 3/2),
+  all and (min--moz-device-pixel-ratio: 1.5),
+  all and (min-device-pixel-ratio: 1.5) {
+  //  background-image: url("#{$at2x_path}");
+  }
+}
+
+@mixin card-2x($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat) {
+
+  $at1x_path: "#{$path}.#{$ext}";
+  $at2x_path: "#{$path}@2x.#{$ext}";
+
+  background-image: url("#{$at1x_path}");
+  background-size: $w $h;
+  background-position: $pos;
+  background-repeat: $repeat;
+  clip-path: inset(2px 2px 4px 2px round 4%);
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5),
+  all and (-o-min-device-pixel-ratio: 3/2),
+  all and (min--moz-device-pixel-ratio: 1.5),
+  all and (min-device-pixel-ratio: 1.5) {
+  //  background-image: url("#{$at2x_path}");
+  }
+}
+
+@mixin card-2x-overlayed($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat) {
+
+  $at1x_path: "#{$path}.#{$ext}";
+  $at2x_path: "#{$path}@2x.#{$ext}";
+
+//  background-image: url("#{$at1x_path}");
+//  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("#{$at2x_path}");
+  background-size: $w $h;
+  background-position: $pos;
+  background-repeat: $repeat;
+  clip-path: inset(2px 2px 4px 2px round 4%);
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5),
+  all and (-o-min-device-pixel-ratio: 3/2),
+  all and (min--moz-device-pixel-ratio: 1.5),
+  all and (min-device-pixel-ratio: 1.5) {
+  //  background-image: url("#{$at2x_path}");
+  //  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("#{$at2x_path}");
+  }
+}

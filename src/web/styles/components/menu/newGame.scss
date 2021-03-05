@@ -1,0 +1,342 @@
+.start-new-game {
+  position: relative;
+//  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, #000000 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 15px;
+  margin-top: 10px;
+
+  background: #FED75F;
+  border: 2px solid #FFFFFF;
+  -webkit-box-shadow: 4px 4px 0px 0px #380000;
+  -moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 0px 0px #380000;
+
+/*  & .block-icon {
+    @include background-2x( '../../images/Start game block icon', 'png', 70px, 50px, center center, no-repeat );
+    width: 70px;
+    height: 50px;
+    position: relative;
+    margin: auto;
+    top:-20px;
+    margin-bottom: -20px;
+    left: 0px;
+  } */
+
+  .sng {
+    &-choose-bet{
+
+      padding-top: 14px;
+
+      > div {
+        display: inline-block;
+      }
+
+      .dropdown {
+        right: 0;
+        float: right;
+      }
+
+      &-label {
+        float: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        color: #2E5A56;
+      }
+    }
+  }
+
+  & .new-game {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    color: #2E5A56;
+    text-align: left;
+    margin: auto;
+    text-transform: uppercase;
+    padding-bottom: 13px;
+  }
+
+  & .game-type {
+
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #fff;
+    margin: auto;
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    box-shadow: 0 1px 0px 0px rgba(255,255,255,.1), 0 -1px 0px 0px rgba(255,255,255,.1);
+
+    &-text {
+      margin-left: 5px;
+
+      font-size: 13px;
+      line-height: 18px;
+
+      color: #fff;
+
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+   &-input {
+      & input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      & .checkmark{
+        background: #FFFFFF;
+        border-radius: 3px;
+        margin-top: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 18px;
+        width: 18px;
+      }
+
+      & .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      & input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      & .checkmark:after {
+      //  @include background-2x( '../../images/Checkbox selector only-o', 'png', 16px,12px, center center, no-repeat );
+        background-image: url('../../../../images/Checkbox selector only-o.png');
+        width: 16px;
+        height: 12px;
+        position: absolute;
+        top:3px;
+        left: 1px;
+      }
+    }
+  }
+
+  & .game-bet {
+
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #fff;
+    margin: auto;
+
+    padding-left: 53px;
+    padding-right: 55px;
+    margin-bottom: 7px;
+
+    box-shadow: 0 1px 0px 0px rgba(255,255,255,.1), 0 -1px 0px 0px rgba(255,255,255,.1);
+
+    &-select {
+      border: 1px solid #fff;
+      height: 28px;
+      width: 80%;
+      padding-top: 2px;
+    //  background: linear-gradient(360deg, #222222 0%, #313131 31.49%, #343434 44.94%, #646464 70.39%, #ADADAD 96.4%);
+      border-radius: 3px 0px 0px 3px;
+
+
+      font-size: 13px;
+      line-height: 18px;
+
+      color: #FFF;
+      margin: auto;
+
+      background: #2c5955;
+
+      & option {
+        background-color: #2c5955;;
+      }
+    }
+  }
+
+
+  & .game-type {
+
+    &-wrapper {
+      width: 87%;
+      margin: auto;
+      background: #2E5A56;
+      border: 1px solid #FFFFFF;
+      border-radius: 20px;
+      padding: 8px 5px;
+    }
+
+    &-selected {
+      font-size: 13px;
+      font-weight: 500;
+      color: #2c5955;
+      margin-left: 15px;
+      margin-bottom: 10px;
+
+      &-div {
+        display: inline-block;
+      }
+    }
+
+    &-select {
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
+      color: #FFFFFF;
+      padding-left: 10px;
+      padding-bottom: 3px;
+    }
+  }
+
+
+
+  & .start-game-button {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 15px;
+
+    background-color: #c44c4c;
+    border-radius: 15px;
+    height: 30px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #fff;
+    -webkit-box-shadow: 5px 5px 0px 0px #380000;
+    -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 0px 0px #380000;
+
+    &:hover {
+      color: #FFD34E;
+      border-color: #FFD34E;
+      background-color: #c44c4c;
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: #FFD34E;
+      border-color: #FFD34E;
+      background-color: #c44c4c;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: #fff;
+      background-color: #380000;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+}
+
+.gameType {
+  width: 27px;
+  height: 24px;
+
+  background: #C4C4C4;
+  border-radius: 2px;
+
+  &-text {
+    width: 27px;
+    height: 18px;
+
+    margin: auto;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+
+    text-align: center;
+    letter-spacing: 0.5px;
+
+    color: #1E413D;
+  }
+}
+
+
+.room-password {
+
+  &-digit {
+    font-size: 26px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
+    margin-left: 3px;;
+    margin-right: 3px;
+
+  //  color: transparent;
+  //  text-shadow: 0 0 0 gray;
+  //  text-align: center;
+
+  //  &:focus {
+  //    outline: none;
+  //  }
+  }
+
+  &-error {
+    font-size: 13px;
+
+  }
+}
+
+
+.created-room {
+
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  margin: auto;
+
+  text-transform: uppercase;
+  color: #2c5955;
+
+  &-code {
+    width: 190px;
+    margin-left: -5px;
+
+    &-title {
+      width: 100%;
+      font-style: normal;
+      font-size: 16px;
+      text-align: center;
+      margin: auto;
+      color: #2c5955;
+    }
+  }
+
+  &-div {
+    height: auto;
+    display: inline-block;
+    margin-right: 4px;
+    color: #000;
+    vertical-align: middle;
+  }
+}

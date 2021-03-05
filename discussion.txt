@@ -1,0 +1,21 @@
+Let me re-cover the errors you mentioned again.
+1. sometimes, users cannot move card(on allowed/enabled cards), so s(he) missed turn. and not sure in which case this happens. never considered it.
+2. You get message of missed turn, but actually another play missed his(her) turn. so wrong missed turn message error.
+3. Uses cannot join to the rooms on his(her) mobile and some recent modeled iPhone.
+(If there is anything I missed, then Please let me know.)
+
+Skiming your project code and docs referenced, I figured out it will takes about 3 days for grasping whole project architecture.
+The things if we have to use websocket or other sdk module would be clear after that. I will explain that points to you by then.
+No worries, I will take it solved as soon as possible. 
+
+And for this timely manner project, I have willing to take daily report to you, so you can see progress obviously.
+For this project, I can work 5 hours per day or more if you want. and the rate is $30/hr as you know.
+
+we have to promise working and paying must be clear and non-regrettable each other.
+If you have more detail plan, then let me know. I would be happy if you have.
+
+and here is sth need to be considered between us.
+Since this is important project for you and me, communication between us would be flexible.
+and as you know, there's so many restrict option on freelancer chat.
+So I suggest we could use another chat system like skype or slack. Of course, it's up to your mind whether you choose which method.
+please let me know if you are agree with this. my skype name: live:.cid.b8321afc29387c43

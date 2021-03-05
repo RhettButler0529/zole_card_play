@@ -1,0 +1,528 @@
+@import "bootstrap.scss";
+@import "components/sidebar";
+@import "components/loading";
+@import "components/header";
+@import "components/footer";
+@import "components/gameplay.scss";
+@import 'components/previousRound.scss';
+@import "components/menu/menu.scss";
+@import "components/menu/myInfo";
+@import "components/menu/bonusPage";
+@import "components/menu/buyPage";
+@import "components/menu/newGame";
+@import "components/menu/sendMoney";
+@import "components/menu/topPage";
+@import "components/menu/levelProgress";
+@import "components/menu/tournaments";
+@import "components/menu/bottomBar";
+@import "components/menu/customTooltip";
+@import "components/menu/moneyHistory";
+@import "components/contactSupport";
+
+@import "components/notification";
+
+@import "components/admin/admin";
+@import "components/admin/tournaments";
+@import "components/admin/allUsers";
+@import "components/admin/chat";
+
+@import "components/chat";
+@import "components/emotions";
+
+@import '~@splidejs/splide/dist/css/themes/splide-default.min.css';
+@import "components/home";
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dropdown {
+  button{
+    background: #2E5A56 !important;
+    border: 1px solid #FFF !important;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    min-width: 150px;
+    text-align: left;
+  }
+  button:active, button:focus, button:hover{
+    background: #2E5A56;
+    border: 1px solid #FFF;
+  }
+
+  button::after{
+    border: 0;
+    background: url('../../images/caret.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 13px;
+    height: 21px;
+    vertical-align: middle;
+    background-size: 11px 21px;
+    margin-left: 0.35em;
+    float: right;
+  }
+
+  .dropdown-menu {
+    border-radius: 0;
+    background: #2E5A56;
+    border: 1px solid #FFF;
+    overflow: hidden;
+
+    .dropdown-item {
+      border-radius: 0;
+      border: 0 !important;
+      color: #FFF;
+      background: transparent !important;
+    }
+    .dropdown-item:hover {
+      border: 0 !important;
+      color: #FFF;
+      background: #380000 !important;
+    }
+  }
+}
+
+.dropdown.small {
+  button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    min-width: 110px;
+    padding: 2px 8px;
+  }
+
+  button::after{
+    width: 10px;
+    height: 18px;
+    background-size: 8px 18px;
+    margin-left: 0.25em;
+  }
+}
+
+/**
+ * Form Overrides
+ */
+.form-control {
+  &:focus {
+    outline: none !important;
+    box-shadow: none;
+    border-color: $gray-400;
+    border-bottom-color: $primary;
+  }
+}
+
+.btn {
+  i {
+    font-size: 0.8rem;
+  }
+}
+
+/**
+  * Display none class
+  */
+  .display-none {
+    display: none!important;
+  }
+
+  .display-inline {
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .version {
+    border: 0;
+    float: right;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+
+    &-wrapper {
+      display: inline-block;
+      vertical-align: middle;
+      float: right;
+      margin-top: 3px;
+    }
+  }
+
+/**
+ * Jumbotron
+ */
+.jumbotron {
+  border-radius: 0;
+}
+
+/**
+ * Pulsating Loading Animation
+ */
+.content-loading {
+  opacity: 1;
+  animation: fadeInOut 1s linear;
+}
+.close{
+  color: #614123;
+  text-shadow: 0 1px 0 #000;
+}
+.btn-secondary {
+//  color: #796236;
+//  background: linear-gradient(180deg, #443013 0%, #211e17 100%);
+//  border-radius: 3px;
+//  border-color: #3c2f13;
+}
+
+.modal-dialog {
+  top: 125px;
+}
+
+.modal-content {
+  //  background-color: #2c5955;
+    color: #fff;
+    font-size: .9rem;
+  //  box-shadow: 3px 3px 0px 0px #380000;
+
+  //  background-color: transparent;
+  //  box-shadow: none;
+  //  border: 0;
+    border-radius: 0;
+
+    background-color: #2c5955;
+    box-shadow: 3px 3px 0px 0px #380000;
+    border: 1px solid #fff;
+
+    .modal-header {
+    //  border-bottom: 1px solid #1a1b1b;
+      padding: 0.5rem 0.5rem;
+    //  text-transform: uppercase;
+    //  border: 0;
+
+      h5{
+        font-size: 1.2rem;
+        color:#fff;
+      }
+    }
+
+    .modal-header {
+      font-size: 18px;
+      line-height: 24px;
+      border: 0;
+
+      color: #fff;
+    //  background-color: #2c5955;
+    //  box-shadow: 3px 3px 0px 0px #380000;
+    //  border: 1px solid #fff;
+    //  border-bottom: 0;
+    //  text-transform: uppercase;
+
+      & .modal-title {
+        width: 100%;
+        text-align: center;
+      }
+
+      &-tab {
+
+        &-link {
+          border: 0;
+          padding: 0.25rem, 1rem;
+
+          color: #fff;
+        //  background: linear-gradient(180deg, rgba(255, 176, 70, 0.65) 0%, rgba(94, 70, 45, 0.65) 100%), #000000;
+
+          opacity: 0.7;
+
+          &.active {
+            opacity: 1;
+            color: #fff;
+          }
+        }
+      }
+
+      &-close {
+        width: 21px;
+        height: 21px;
+        color: #fed65f;
+      }
+    }
+
+    .modal-body {
+      font-size: 24px;
+
+      color: #fff;
+    //  background-color: #2c5955;
+    //  box-shadow: 3px 3px 0px 0px #380000;
+    //  border: 1px solid #fff;
+    //  border-top: 0;
+    //  text-transform: uppercase;
+    }
+
+    .modal-footer {
+      border: 0;
+      width: 100%;
+      display: block;
+      text-align: center;
+      border: 0;
+
+    //  background-color: transparent;
+    //  box-shadow: none;
+    //  text-transform: uppercase;
+
+      &-button {
+        width: 20%;
+        margin:auto;
+        margin-right: 10px;
+        margin-left: 10px;
+
+        padding-top: 3px;
+
+        background-color: #2c5955;
+        border-radius: 10px;
+        height: 30px;
+        font-size: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        border: 1px solid #fff;
+        -webkit-box-shadow: 5px 5px 0px 0px #380000;
+        -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 0px 0px #380000;
+
+        &:hover {
+          color: #fed65f;
+          border-color: #fed65f;
+          background-color: #2c5955;
+          text-decoration: none;
+        }
+
+        &:focus {
+          color: #fed65f;
+          border-color: #fed65f;
+          background-color: #2c5955;
+          text-decoration: none;
+        }
+
+        &:active {
+          color: #fff;
+          background-color: #380000;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+  //  .modal-footer {
+    //  padding: 0.5rem;
+    //  border: 0;
+    //  border-top: 1px solid #1a1b1b;
+  //  }
+}
+
+.db-status-indicator {
+  width: 2px;
+  height: 2px;
+  background-color: red;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.display-none {
+  display: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.width-25 {
+  width: 25%;
+}
+
+.width-15 {
+  width: 15%;
+}
+
+.width-10 {
+  width: 10%;
+}
+
+*:focus {
+		outline: none !important;
+    box-shadow: none !important;
+}
+
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.2 }
+  50% { opacity: 0.7 }
+}
+
+.game-bg{
+//  @include background-2x( '../../images/Menu/zole_bg', 'png', 980px, 700px, top center, no-repeat );
+  background-image: url('../../images/Menu/zole_bg.png');
+  background-size: cover;
+  background-position: top center;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -9999999999999999;
+}
+
+
+.game-bg.loading-bg{
+    background-image: url('../../images/landing-view/background.jpg');
+}
+
+
+@font-face {
+  font-family: 'DroidSansMono';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('../../fonts/DroidSansMono.ttf') format('ttf'),
+}
+
+@font-face {
+  font-family: 'Futura';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('../../fonts/Futura.ttc') format('ttc'),
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('../../fonts/Helvetica.ttc') format('ttc'),
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('../../fonts/MyriadPro-Regular.otf') format('otf'),
+}
+
+// Common buttons
+
+.common-button {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #2c5955;
+  border-radius: 15px;
+  height: 30px;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 5px 5px 0 0 #380000;
+}
+.common-button.lite-shadow {
+  box-shadow: 2px 2px 0 0 #380000;
+}
+
+.common-button:focus {
+  color: #ffd34e;
+  border-color: #ffd34e;
+  background-color: #2c5955;
+  text-decoration: none;
+}
+
+.common-button:hover {
+  color: #ffd34e;
+  border-color: #ffd34e;
+  background-color: #2c5955;
+  text-decoration: none;
+}
+
+.common-button:active {
+  color: #fff;
+  background-color: #380000;
+  box-shadow: none;
+}
+
+.common-button:disabled {
+  cursor: default;
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  box-shadow: none;
+}
+
+a.common-link {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FFD34F;
+}
+
+form.common-form {
+
+  max-width: 400px;
+  display: inline-block;
+  width: 100%;
+
+  .form-group {
+    text-align: left;
+
+    label {
+      font-family: Arial;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 18px;
+      color: #FFFFFF;
+    }
+
+    input {
+      background-color: transparent;
+      color: #FFD34F;
+      border: 1px solid #FFFFFF;
+      box-sizing: border-box;
+      border-radius: 30px;
+      font-family: Arial;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      padding: 25px 20px;
+    }
+
+    input::placeholder {
+      //color: #FFD34F;
+    }
+  }
+
+  button {
+    width: 180px;
+    height: 40px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 20px;
+  }
+  .submit-button {
+    margin-top: 30px;
+  }
+}

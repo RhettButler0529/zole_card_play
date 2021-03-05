@@ -1,0 +1,171 @@
+.send-money {
+//  margin-top: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &-title {
+    font-style: normal;
+  //  font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+
+  //  letter-spacing: 0.257143px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+    color: #EDF75A;
+
+  //  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+
+  &-block {
+
+    &-background {
+    //  @include background-2x( '../../images/BonusPage/Daily bonus rec bckgr desktop', 'png', 980px, 700px, top center, no-repeat );
+    //  background-size: cover;
+    //  background-position: top center;
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+
+    &-text {
+      color: #fff;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    &-invite {
+
+      &-button {
+
+        width: 85%;
+        margin:auto;
+
+        background-color: #2c5955;
+        border-radius: 15px;
+        height: 30px;
+        font-size: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        border: 1px solid #fff;
+        -webkit-box-shadow: 5px 5px 0px 0px #380000;
+        -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 0px 0px #380000;
+
+        &:hover {
+          color: #FFD34E;
+          border-color: #FFD34E;
+          background-color: #2c5955;
+          text-decoration: none;
+        }
+
+        &:focus {
+          color: #FFD34E;
+          border-color: #FFD34E;
+          background-color: #2c5955;
+          text-decoration: none;
+        }
+
+        &:active {
+          color: #fff;
+          background-color: #380000;
+          -webkit-box-shadow: none;
+        	-moz-box-shadow: none;
+        	box-shadow: none;
+        }
+      }
+    }
+
+    &-left {
+
+    //  @include background-2x( '../../images/BuyMoney/Send money rec -o', 'png', 100%, 100%, top center, no-repeat );
+
+    //  background: #000000;
+    //  border: 1px solid transparent;
+
+    //  border-image: url('../../images/BuyMoney/Send money rec -o.png') 30 round;
+
+    /*  border-image:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0),
+          #FCFFB6
+        ) 0 100%;
+
+      border-top: 1px solid #FCFFB6;  */
+
+      height: 52px;
+
+      // background-image: -webkit-gradient(linear, left bottom, left top,color-stop(0.67, rgba(252, 255, 182, 0.25)), color-stop(0.33, rgba(252, 255, 182, 0.5)));
+      // background-image: -moz-linear-gradient(center bottom, rgba(252, 255, 182, 0.25) 67%, rgba(252, 255, 182, 0.5) 33%,);
+      // padding: 1px;
+
+      &-text {
+        margin-top: 15px;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        /* or 122% */
+
+        text-align: center;
+        letter-spacing: 0.257143px;
+
+        color: #FFFFFF;
+
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+      }
+
+      &-image {
+
+        margin-top: 5px;
+        & .coin-stack {
+        //  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);
+          margin-left: auto;
+          margin-right: auto;
+          width: auto;
+          height: 45px;
+        }
+      }
+
+      &-button {
+        height: 32px;
+        width: 100%;
+        margin-top: 10px;
+        background: linear-gradient(180deg, #B4EC51 0%, #429321 100%);
+        border-radius: 3px;
+
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.2px;
+
+        color: #FFFFFF;
+        padding: 0;
+
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+      }
+
+    }
+  }
+}
+
+.app-store-button {
+  width: 100%;
+  height: 52px;
+
+}
+
+.google-play-button {
+  width: 100%;
+  height: 52px;
+}

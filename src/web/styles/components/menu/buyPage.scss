@@ -1,0 +1,389 @@
+.buy-page {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.02) 100%);
+  border-radius: 15px;
+  color: #fff;
+  padding: 10px 5px 5px 10px;
+  height: 390px;
+
+  .glitter-anim-image {
+    position: absolute;
+    z-index: 999;
+  }
+
+  &-header {
+    height: 35px;
+
+    &-image {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    &-text {
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #fff;
+      margin-top: 5px;
+      display: inline-block;
+    }
+
+    &-button {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+
+      background-color: #2c5955;
+      border-radius: 15px;
+      height: 30px;
+      font-size: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      border: 1px solid #fff;
+      -webkit-box-shadow: 5px 5px 0px 0px #380000;
+      -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+      box-shadow: 5px 5px 0px 0px #380000;
+
+      &:hover {
+        color: #FFD34E;
+        border-color: #FFD34E;
+        background-color: #2c5955;
+        text-decoration: none;
+      }
+
+      &:focus {
+        color: #FFD34E;
+        border-color: #FFD34E;
+        background-color: #2c5955;
+        text-decoration: none;
+      }
+
+      &:active {
+        color: #fff;
+        background-color: #380000;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-main {
+    height: 55%;
+  }
+
+  &-send {
+    margin-top: 5px;
+  }
+
+  &-coins {
+
+    &-background {
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      z-index: 1;
+      background-color: #c44c4c;
+      border-radius: 50%;
+      margin: auto;
+      top: 20px;
+      left: 20px;
+    }
+
+    &-button {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+
+      margin-top: 5px;
+
+      background-color: #c44c4c;
+      border-radius: 15px;
+      height: 30px;
+      font-size: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      border: 1px solid #fff;
+      -webkit-box-shadow: 5px 5px 0px 0px #380000;
+      -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+      box-shadow: 5px 5px 0px 0px #380000;
+
+      &:hover {
+        color: #FFD34E;
+        border-color: #FFD34E;
+        background-color: #c44c4c;
+        text-decoration: none;
+      }
+
+      &:focus {
+        color: #FFD34E;
+        border-color: #FFD34E;
+        background-color: #c44c4c;
+        text-decoration: none;
+      }
+
+      &:active {
+        color: #fff;
+        background-color: #380000;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+
+      &-text {
+      //  color: #fff;
+        text-align: center;
+      }
+    }
+
+    &-amount {
+      color: #FFD34E;
+      text-align: center;
+      display: inline-block;
+    }
+
+    &-coin {
+      text-align: center;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+    }
+
+    &-wrapper {
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+    }
+
+    &-bonus-image {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: 5;
+    }
+
+    &-image1 {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      top: 32px;
+      margin:auto;
+      z-index: 25;
+    }
+
+    &-image2 {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      top: 32px;
+      margin:auto;
+      z-index: 25;
+    }
+
+    &-image3 {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      top: 20px;
+      margin:auto;
+      z-index: 25;
+    }
+
+    &-image4 {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      top: 15px;
+      margin:auto;
+      z-index: 25;
+    }
+
+    &-image5 {
+      position: relative;
+      width: 105px;
+      height: 105px;
+      top: -5px;
+      margin:auto;
+      z-index: 25;
+    }
+
+    &-imageWrapper {
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+  }
+
+  &-title {
+
+    &.nav-link {
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+
+      margin-top: 10px;
+
+      letter-spacing: 0.257143px;
+
+      color: #EDF75A;
+      border: 0;
+
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+
+      &.active {
+        color: #EDF75A!important;
+        border: 0!important;
+        background-color: transparent!important;
+      }
+
+      &:hover {
+        border: 0;
+      }
+
+      &:focus {
+        border: 0;
+      }
+    }
+  }
+
+  &-block {
+    //  background: #000000;
+  //  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.02) 100%);
+  //  border-radius: 20px;
+  //  padding: 5px;
+  //  height: 335px;
+    width: 100%;
+
+  //  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.02) 100%);
+
+  //  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.75, rgba(252, 255, 182, 0.6)), color-stop(0.25, rgba(252, 255, 182, 0.1)));
+    padding: 1px;
+
+    &-container {
+    //  background: #000000;
+      height: 100%;
+      position: relative;
+    }
+
+    &-background {
+    //  @include background-2x( '../../images/BuyMoney/Buy options bckgr desktop', 'png', 980px, 700px, top center, no-repeat );
+    //  background-size: cover;
+    //  background-position: top center;
+      //border-bottom: 1px solid rgba(252, 255, 182, 0.6);
+
+    /*  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.02) 100%);
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      bottom: 0px;
+      left: 0px; */
+    }
+
+    &-row {
+      padding-top: 10px;
+      margin-left: 5px;
+    }
+
+    & .amount {
+      text-align: right;
+      padding: 0;
+    }
+
+    & .price {
+      text-align: center;
+      padding-left: 0;
+      padding-right: 20px;
+    }
+
+    & .yellow {
+      color: #EDF75A;
+    }
+
+    &-text {
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 26px;
+      margin-top: 12px;
+
+      letter-spacing: 0.285714px;
+
+      color: #FFFFFF;
+
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    &-coin {
+    //  position: absolute;
+      right: -5px;
+      top: 60%;
+      width: 50px;
+      height: 50px;
+      z-index: 5;
+
+      &-image {
+        position: absolute;
+        width: auto;
+        height: 100%;
+      }
+
+      &-text {
+        position: absolute;
+        top: 8px;
+        left: 30px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #DFA11B;
+      }
+    }
+
+    &-button {
+        & .buy-money-button {
+          background: linear-gradient(180deg, #FFD400 2.43%, #CA9318 100%);
+          border-radius: 3px;
+          height: 42px;
+          width: 70%;
+          border-radius: 1px;
+          margin-left: 10%;
+          margin-right: 15%;
+          font-family: 'Open Sans', sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 13px;
+          line-height: 18px;
+          letter-spacing: 0.2px;
+          color: #FFFFFF;
+          text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+
+          padding-left: 0;
+
+          &-image {
+            width: 40%;
+             position: relative;
+             float: left;
+          }
+
+          &-text {
+            width: 60%;
+            position: relative;
+            float: right;
+            margin-top: 6px;
+          }
+        }
+      }
+  }
+
+  &-tabContent {
+    height: 100%;
+
+  }
+
+  &-tab {
+    height: 100%;
+  }
+}
